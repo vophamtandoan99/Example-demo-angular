@@ -16,6 +16,7 @@ module.exports = {
     content: [
         ...TDS_UI_CONFIG.content,
         './src/**/*.{html,ts}',
+        './apps/**/*.{html,ts}'
     ],
     darkMode: "class",
     theme: {

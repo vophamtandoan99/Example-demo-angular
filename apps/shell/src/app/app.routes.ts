@@ -1,5 +1,7 @@
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { Route } from '@angular/router';
+import { LayoutComponent } from './layout/layout.component';
+import { AuthGuard } from './guards/auth.guard';
 
 export const appRoutes: Route[] = [
   {
@@ -7,11 +9,18 @@ export const appRoutes: Route[] = [
     loadChildren: () => import('login/Routes').then((m) => m.remoteRoutes),
   },
   {
-    path: 'dashboard',
-    loadChildren: () => import('dashboard/Routes').then((m) => m.remoteRoutes),
-  },
-  {
     path: '',
-    component: NxWelcomeComponent,
+    component: LayoutComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'dashboard',
+        loadChildren: () => import('dashboard/Routes').then((m) => m.remoteRoutes),
+      },
+      {
+        path: '',
+        component: NxWelcomeComponent,
+      },
+    ],
   },
 ];
