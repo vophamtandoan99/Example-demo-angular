@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "../../../node_modules/tds-ui/assets/v2/scss/components/tds.component.scss";
+//Tùy vào dự án chọn theme blue/green/orange/red/yellow hoặc all
+// TPOSV2
+//@import "../../../node_modules/tds-ui/assets/v2/scss/theme/theme.blue.scss";
+//TPageV2
+//@import "../../../node_modules/tds-ui/assets/v2/scss/theme/theme.green.scss";
+//WIPIX
+//@import "../../../node_modules/tds-ui/assets/v2/scss/theme/theme.orange.scss";
+//theme yellow
+//@import "../../../node_modules/tds-ui/assets/v2/scss/theme/theme.yellow.scss";
+//theme red
+//@import "../../../node_modules/tds-ui/assets/v2/scss/theme/theme.red.scss";
+//mặc định theme blue
+@import "../../../node_modules/tds-ui/assets/v2/scss/theme/theme.all.scss";
