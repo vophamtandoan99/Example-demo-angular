@@ -3,13 +3,20 @@ import { TDSHeaderComponent } from 'tds-ui/header';
 import { TDSAvatarModule } from 'tds-ui/avatar';
 import { TDSDropDownModule } from 'tds-ui/dropdown';
 import { NgIf } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [TDSHeaderComponent, TDSAvatarModule, TDSDropDownModule, NgIf],
+  imports: [
+    TDSHeaderComponent,
+    TDSAvatarModule,
+    TDSDropDownModule,
+    NgIf,
+    RouterModule,
+  ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css',
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
   get userEmail(): string | null {

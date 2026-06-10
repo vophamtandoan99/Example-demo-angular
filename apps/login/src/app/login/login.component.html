@@ -26,8 +26,10 @@
 
                                 <tds-form-field class="full">
                                     <tds-label>Password</tds-label>
-                                    <input autocomplete="off" tdsInput placeholder="••••••••" formControlName="password" [required]="true" />
-                                    <span tdsSuffix><i class="tdsi-eye-fill"></i></span>
+                                    <input autocomplete="off" tdsInput placeholder="••••••••" formControlName="password" [required]="true" [type]="isShowPassword ? 'text' : 'password'" />
+                                    <span tdsSuffix (click)="onTogglePassword()">
+                                        <i [ngClass]="isShowPassword ?  'tdsi-eye-off-line' : 'tdsi-eye-fill'"></i>
+                                    </span>
                                     <tds-error *ngIf="(f['password'].touched || submitted) && f['password'].errors">
                                         <small *ngIf="f['password'].errors['required']">Mật khẩu không được để trống.</small>
                                         <small *ngIf="f['password'].errors['minlength']">Mật khẩu phải từ 6 ký tự trở lên.</small>

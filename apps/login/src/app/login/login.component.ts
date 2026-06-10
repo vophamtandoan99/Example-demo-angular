@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgClass } from '@angular/common';
 import { TDSCardModule } from 'tds-ui/card';
 import { TDSButtonModule } from 'tds-ui/button';
 import { TDSButtonMenuModule } from 'tds-ui/button-menu';
@@ -26,6 +26,7 @@ import { Router } from '@angular/router';
     TDSInputModule,
     ReactiveFormsModule,
     TDSCheckBoxModule,
+    NgClass,
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
@@ -34,6 +35,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   registerForm!: FormGroup;
   submitted = false;
+  isShowPassword = false;
 
   constructor(private router: Router, private fb: FormBuilder) {}
 
@@ -59,5 +61,9 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('isLoggedIn', 'true');
       this.router.navigate(['/']);
     }
+  }
+
+  onTogglePassword(): void {
+    this.isShowPassword = !this.isShowPassword;
   }
 }
