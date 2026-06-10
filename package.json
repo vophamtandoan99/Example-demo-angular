@@ -59,6 +59,7 @@
     "@angular/platform-browser-dynamic": "~18.2.0",
     "@angular/router": "~18.2.0",
     "@nx/angular": "^19.8.14",
+    "echarts": "^5.2.2",
     "rxjs": "~7.8.0",
     "tds-ui": "https://tds.tmtco.org/lib/tds-ui-18.5.2.tgz",
     "zone.js": "~0.14.3"
